@@ -52,6 +52,7 @@ export const QuoteText = styled.blockquote`
   color: #1c1c1e;
   margin-bottom: 24px;
   font-weight: 500;
+  text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.6);
 
   @media (max-width: 768px) {
     font-size: 1.4rem;
@@ -61,8 +62,9 @@ export const QuoteText = styled.blockquote`
 export const QuoteAuthor = styled.p`
   font-size: 1.2rem;
   font-weight: bold;
-  color: #21a038; // фирменный зелёный Сбера
+  color: #21a038;
   margin-bottom: 32px;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5); // белая тень для зелёного
 
   @media (max-width: 768px) {
     font-size: 1rem;

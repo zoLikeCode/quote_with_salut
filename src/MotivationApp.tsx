@@ -38,7 +38,7 @@ const initializeAssistant = (getState: any) => {
   if (import.meta.env.DEV) {
     return createSmartappDebugger({
       token: import.meta.env.VITE_APP_TOKEN,
-      initPhrase: 'Запусти Motivation',
+      initPhrase: 'Запусти Цитатник',
       getState
     });
   } 
@@ -130,7 +130,7 @@ const MotivationApp = (): JSX.Element => {
           case "next_quote":
             fetchQuote(quoteRef.current);
             break;
-          
+                   
           default:
             console.warn('Неизвестный тип действия:', action.type);
             break
