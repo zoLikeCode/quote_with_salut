@@ -160,7 +160,7 @@ const MotivationApp = (): JSX.Element => {
             <QuoteAuthor>— {author}</QuoteAuthor>
           </>
         ) : (
-          <p>Нажми кнопку, чтобы получить цитату!</p>
+          <p style={{ color: 'black' }}>Нажми кнопку, чтобы получить цитату!</p>
         )}
         <Button onClick={handleClick}>
           {quote ? 'Другую цитату' : 'Выдать цитату'}
