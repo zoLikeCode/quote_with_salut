@@ -4,7 +4,7 @@ theme: /
 
     state: Start
         q!: $regex</start>
-        a: Добро пожаловать в Motivation, ты можешь получить цитаты величайших мыслителей!
+        a: Добро пожаловать в Цитатник, вы можете получить цитаты величайших мыслителей!
 
     state: ПовторитьЦитату
         q!: (повтори|озвучь) цитату
@@ -26,14 +26,14 @@ theme: /
     state: ОзвучиваниеЦитаты
         event!: VOICE
         if: $request.data.eventData.text
-            a: {{$request.data.eventData.text}} {{$request.data.eventData.au_text}}
+            a: {{$request.data.eventData.text}} -{{$request.data.eventData.au_text}}
         else:
             a: Не могу повторить.
 
     
     state: ПолучитьЦитату
-        q!: (новая) цитата
-        a: Вот новая цитата.
+        q!: (хочу|новая|выдай|подбери) (цитату|цитата)
+        a: Вот цитата.
 
         script:
             $response.replies = $response.replies || []
@@ -48,9 +48,13 @@ theme: /
                 }]
             };
             $response.replies.push({ type: "raw", body: body });
+        
+    state: ПомощьВПриложении
+        q!: помощь
+        a: Вот запросы, который я знаю: "Хочу цитату", "Озвучь цитату".
 
         
         
     state: Fallback
         event!: noMatch
-        a: Вы сказали: {{$parseTree.text}}
+        a: Этот запрос мне не знаком. Вот команды, которые я знаю: "Помощь", "Хочу цитату", "Озвучь цитату".
