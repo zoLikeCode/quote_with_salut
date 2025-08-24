@@ -1,12 +1,47 @@
-# React + Vite
+# Client-Server Application for OOO "Garpix"
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## About
+This project was completed by a university team during internship practice. 
+The goal is to develop a client–server application using the Agile Scrum methodology.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
+- Frontend: React
+- Deployment: Vercel (frontend), any server/cloud for backend
+- VCS: Git + GitHub
 
-## Expanding the ESLint configuration
+## Local Development
+1. Clone the repository
+```bash
+git clone https://github.com/<your-username>/<your-repo>.git
+cd <your-repo>
+```
+2. Install dependencies
+```bash
+npm install
+```
+or
+```bash
+yarn install
+```
+3. Start the development server
+```bash
+npm start
+```
+The app will be available at: http://localhost:3000
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Deploy to Vercel
+1. Create an account at https://vercel.com/ and connect GitHub
+2. Click "New Project" and import your repository
+3. Build settings:
+   - Framework Preset: Create React App (if CRA) or Other
+   - Build Command: npm run build
+   - Output Directory: build
+4. Click "Deploy"
+5. After the build completes, you will get a URL like: https://your-app.vercel.app
+
+## Environment Variables
+If your app needs environment variables:
+- Go to Vercel → Project → Settings → Environment Variables
+- Add variables (for example: REACT_APP_API_URL)
+- Redeploy after changes
